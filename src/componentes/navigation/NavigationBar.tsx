@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { Button, InputAdornment, TextField } from "@mui/material";
-import { Search } from "@mui/icons-material";
+import { Menu, Search } from "@mui/icons-material";
 import Image from "next/image";
 
 const NavigationBar = () => {
@@ -42,6 +42,9 @@ const NavigationBar = () => {
       </div>
       <div className={styles.NavigationBar_Login}>
         <Button variant="contained">ingresar</Button>
+      </div>
+      <div className={styles.NavigationBar_Menu}>
+        <Menu sx={{ fontSize: "39px" }} />
       </div>
     </nav>
   );

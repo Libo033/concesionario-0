@@ -46,8 +46,72 @@
   justify-content: center;
 }
 
+.NavigationBar_Menu {
+  display: none;
+}
+
 @media (641px <= width <= 1024px) {
+  .NavigationBar_Logo {
+    width: 24%;
+  }
+
+  .NavigationBar_Ul {
+    width: 21%;
+  }
+
+  .NavigationBar_Ul li a {
+    display: none;
+  }
+
+  .NavigationBar_Search {
+    width: 42%;
+  }
+
+  .NavigationBar_Login {
+    width: 13%;
+    display: none;
+  }
+
+  .NavigationBar_Menu {
+    width: 13%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .NavigationBar_Menu svg {
+    cursor: pointer;
+  }
 }
 
 @media (width <= 640px) {
+  .NavigationBar {
+    justify-content: space-between;
+  }
+
+  .NavigationBar_Logo {
+    width: 30%;
+  }
+
+  .NavigationBar_Logo img {
+    width: 96px;
+  }
+
+  .NavigationBar_Ul {
+    display: none;
+  }
+
+  .NavigationBar_Search {
+    display: none;
+  }
+
+  .NavigationBar_Login {
+    width: 13%;
+    display: none;
+  }
+
+  .NavigationBar_Menu {
+    width: 27%;
+    display: flex;
+    justify-content: center;
+  }
 }
