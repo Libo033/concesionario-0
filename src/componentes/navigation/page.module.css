@@ -1,0 +1,53 @@
+.NavigationBar {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #dcdcdc90;
+}
+
+.NavigationBar_Logo {
+  display: flex;
+  justify-content: center;
+  width: 15%;
+}
+
+.NavigationBar_Logo img {
+  width: 120px;
+  height: auto;
+}
+
+.NavigationBar_Ul {
+  width: 45%;
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.NavigationBar_Ul li a {
+  transition: 100ms ease-in;
+  font-size: large;
+  font-weight: 600;
+  color: black;
+}
+
+.NavigationBar_Ul li a:hover {
+  transition: 100ms ease-in;
+  color: #727272;
+}
+
+.NavigationBar_Search {
+  width: 27%;
+}
+
+.NavigationBar_Login {
+  width: 13%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (641px <= width <= 1024px) {
+}
+
+@media (width <= 640px) {
+}
