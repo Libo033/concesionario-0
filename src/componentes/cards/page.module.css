@@ -1,0 +1,46 @@
+.CarCard {
+  width: 330px;
+  height: fit-content;
+  border: 1px solid gainsboro;
+  border-radius: 9px;
+}
+
+.CarCard_Image {
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: 180px;
+}
+
+.CarCard_Image img {
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.CarCard_Info {
+  background-color: whitesmoke;
+  padding: 6px;
+}
+
+.CarCard_InfoMain {
+  font-size: larger;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.CarCard_InfoSecond {
+  height: 48px;
+  margin-bottom: 3px;
+}
+
+.CarCard_InfoKm {
+  color: #696969;
+}
+
+.CarCard_InfoUbi {
+  font-size: small;
+  margin-top: 6px;
+  color: #696969;
+}
