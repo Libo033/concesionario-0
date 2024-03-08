@@ -14,7 +14,7 @@ const NavigationDrawer = () => {
       </div>
       <ul className={styles.NavigationDrawer_Ul}>
         <li>
-          <Link href={"/"}>Publicaciones</Link>
+          <Link href={"/"}>Compra un auto</Link>
         </li>
         <li>
           <Link href={"/"}>Vende tu auto</Link>

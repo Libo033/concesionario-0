@@ -24,7 +24,12 @@
   width: 45%;
   list-style: none;
   display: flex;
+  justify-content: left;
   gap: 32px;
+}
+
+.NavigationBar_Ul li {
+  margin: 0;
 }
 
 .NavigationBar_Ul li a {
@@ -60,6 +65,7 @@
 
 /*#region NavigationDrawer */
 .NavigationDrawer {
+  margin: 0;
   display: none;
 }
 /*#endregion */
@@ -202,10 +208,12 @@
   }
 
   .NavigationDrawer_Button {
+    margin: 0;
     margin-block: 24px;
   }
 
   .NavigationDrawer_Ul {
+    margin: 0;
     border-top: 1px solid #dcdcdc81;
     border-bottom: 1px solid #dcdcdc81;
     list-style: none;
