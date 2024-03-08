@@ -2,6 +2,15 @@
   padding-top: 15vh;
 }
 
+.Home_Cars {
+  padding: 30px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  row-gap: 2.7rem;
+  column-gap: 2.7rem;
+}
+
 @media (641px <= width <= 1024px) {
 }
 
