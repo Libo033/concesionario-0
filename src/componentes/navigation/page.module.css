@@ -5,6 +5,8 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid #dcdcdc90;
+  position: fixed;
+  background-color: white;
 }
 
 .NavigationBar_Logo {

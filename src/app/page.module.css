@@ -1,5 +1,12 @@
+.Home {
+  padding-top: 15vh;
+}
+
 @media (641px <= width <= 1024px) {
 }
 
 @media (width <= 640px) {
+  .Home {
+    padding-top: 146px;
+  }
 }
