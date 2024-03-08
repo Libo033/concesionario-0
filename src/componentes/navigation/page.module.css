@@ -50,6 +50,10 @@
 .NavigationBar_Menu {
   display: none;
 }
+
+.NavigationBar_Search2 {
+  display: none;
+}
 /*#endregion */
 
 /*#region NavigationDrawer */
@@ -147,6 +151,8 @@
 @media (width <= 640px) {
   /*#region NavigationBar */
   .NavigationBar {
+    height: fit-content;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
@@ -155,7 +161,7 @@
   }
 
   .NavigationBar_Logo img {
-    width: 96px;
+    width: 87px;
   }
 
   .NavigationBar_Ul {
@@ -175,6 +181,14 @@
     width: 27%;
     display: flex;
     justify-content: center;
+  }
+
+  .NavigationBar_Search2 {
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding-top: 6px;
+    padding-bottom: 12px;
   }
   /*#endregion */
 

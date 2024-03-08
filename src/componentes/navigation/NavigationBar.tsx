@@ -50,6 +50,23 @@ const NavigationBar = () => {
       <div className={styles.NavigationBar_Menu}>
         <Menu onClick={() => setToggleDrawer(true)} sx={{ fontSize: "39px" }} />
       </div>
+      <div className={styles.NavigationBar_Search2}>
+        <TextField
+          fullWidth
+          autoComplete="off"
+          placeholder="Buscar por marca o modelo."
+          size="small"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <Search />
+              </InputAdornment>
+            ),
+          }}
+          variant="outlined"
+          sx={{ backgroundColor: "#fff" }}
+        />
+      </div>
       <Drawer
         anchor="top"
         open={toggleDrawer}
