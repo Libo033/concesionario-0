@@ -1,3 +1,4 @@
+/*#region NavigationBar */
 .NavigationBar {
   width: 100%;
   height: 15vh;
@@ -49,8 +50,16 @@
 .NavigationBar_Menu {
   display: none;
 }
+/*#endregion */
+
+/*#region NavigationDrawer */
+.NavigationDrawer {
+  display: none;
+}
+/*#endregion */
 
 @media (641px <= width <= 1024px) {
+  /*#region NavigationBar */
   .NavigationBar_Logo {
     width: 24%;
   }
@@ -81,9 +90,62 @@
   .NavigationBar_Menu svg {
     cursor: pointer;
   }
+  /*#endregion */
+
+  /*#region NavigationDrawer */
+  .NavigationDrawer {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 24px;
+    align-items: center;
+  }
+
+  .NavigationDrawer_Button {
+    margin-block: 36px;
+    width: 30%;
+  }
+
+  .NavigationDrawer_Ul {
+    width: 100%;
+    border-top: 1px solid #dcdcdc81;
+    border-bottom: 1px solid #dcdcdc81;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .NavigationDrawer_Ul li a {
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: large;
+    font-weight: 600;
+    margin-block: 18px;
+  }
+
+  .NavigationDrawer_Txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 36px;
+  }
+
+  .NavigationDrawer_Txt img {
+    width: 120px;
+    height: auto;
+  }
+
+  .NavigationDrawer_Txt p {
+    margin-top: 12px;
+    font-weight: 400;
+    color: #727272;
+  }
+  /*#endregion */
 }
 
 @media (width <= 640px) {
+  /*#region NavigationBar */
   .NavigationBar {
     justify-content: space-between;
   }
@@ -114,4 +176,52 @@
     display: flex;
     justify-content: center;
   }
+  /*#endregion */
+
+  /*#region NavigationDrawer */
+  .NavigationDrawer {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 15px;
+  }
+
+  .NavigationDrawer_Button {
+    margin-block: 24px;
+  }
+
+  .NavigationDrawer_Ul {
+    border-top: 1px solid #dcdcdc81;
+    border-bottom: 1px solid #dcdcdc81;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .NavigationDrawer_Ul li a {
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-size: large;
+    font-weight: 600;
+    margin-block: 9px;
+  }
+
+  .NavigationDrawer_Txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 24px;
+  }
+
+  .NavigationDrawer_Txt img {
+    width: 90px;
+    height: auto;
+  }
+
+  .NavigationDrawer_Txt p {
+    margin-top: 12px;
+    font-weight: 400;
+    color: #727272;
+  }
+  /*#endregion */
 }
