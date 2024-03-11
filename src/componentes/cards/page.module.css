@@ -1,8 +1,16 @@
 .CarCard {
+  transition: 150ms ease-in-out;
   width: 100%;
   height: fit-content;
   border: 1px solid gainsboro;
   border-radius: 9px;
+  cursor: pointer;
+}
+
+.CarCard:hover {
+  transition: 150ms ease-in-out;
+  box-shadow: 1px 3px 15px gainsboro;
+  transform: translateY(-1px);
 }
 
 .CarCard_Image {

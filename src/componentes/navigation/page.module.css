@@ -7,6 +7,7 @@
   border-bottom: 1px solid #dcdcdc90;
   position: fixed;
   background-color: white;
+  z-index: 999;
 }
 
 .NavigationBar_Logo {
@@ -16,7 +17,7 @@
 }
 
 .NavigationBar_Logo img {
-  width: 120px;
+  width: 108px;
   height: auto;
 }
 
@@ -166,6 +167,7 @@
 
   .NavigationBar_Logo {
     width: 30%;
+    margin: 0;
   }
 
   .NavigationBar_Logo img {
@@ -186,9 +188,10 @@
   }
 
   .NavigationBar_Menu {
-    width: 27%;
+    width: 30%;
     display: flex;
     justify-content: center;
+    margin: 0;
   }
 
   .NavigationBar_Search2 {

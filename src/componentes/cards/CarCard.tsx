@@ -1,11 +1,18 @@
+"use client";
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 import { ICarCard } from "@/libs/interfaces";
+import { useRouter } from "next/navigation";
 
 const CarCard: React.FC<ICarCard> = (props) => {
+  const r = useRouter();
+
   return (
-    <article className={styles.CarCard}>
+    <article
+      onClick={() => r.push(`/comprar/${props._id}`)}
+      className={styles.CarCard}
+    >
       <div className={styles.CarCard_Image}>
         <Image src={props.image} alt={props.main} width={800} height={800} />
       </div>

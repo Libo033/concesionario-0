@@ -4,6 +4,7 @@ import CarCard from "@/componentes/cards/CarCard";
 
 const cars = [
   {
+    _id: "1",
     main: "Nissan Silvia 2001",
     second: "Motor sin modificaciones. Muy buen estado en general.",
     image:
@@ -12,15 +13,16 @@ const cars = [
     ubi: "Capital Federal, Buenos Aires",
   },
   {
+    _id: "2",
     main: "Nissan 180SX 1998",
-    second:
-      "Pintura original en excelente estado. Llantas OZ nuevas.",
+    second: "Pintura original en excelente estado. Llantas OZ nuevas.",
     image:
       "https://res.cloudinary.com/dsuydyqgz/image/upload/v1709924138/06-concesionario/xkdlq4krldnrbdqkz5io.jpg",
     km: 30000,
     ubi: "Capital Federal, Buenos Aires",
   },
   {
+    _id: "3",
     main: "Subaru Impreza STI 2010",
     second: "Motor sin modificaciones. Muy buen estado en general.",
     image:
@@ -29,15 +31,16 @@ const cars = [
     ubi: "Canning, Buenos Aires",
   },
   {
+    _id: "4",
     main: "Honda S2000 2007",
-    second:
-      "Perfecto estado. Detalles minimos. Transimision manual.",
+    second: "Perfecto estado. Detalles minimos. Transimision manual.",
     image:
       "https://res.cloudinary.com/dsuydyqgz/image/upload/v1709924045/06-concesionario/odzpz9qecs0ui6xxe83f.jpg",
     km: 24000,
     ubi: "Nuñes, Buenos Aires",
   },
   {
+    _id: "5",
     main: "Honda NSX 1991",
     second: "Motor sin modificaciones. Muy buen estado en general.",
     image:
@@ -46,6 +49,7 @@ const cars = [
     ubi: "Canning, Buenos Aires",
   },
   {
+    _id: "6",
     main: "Mitsubishi Evo VII 2002",
     second: "Version GT-A en excelente estado. Tapizado interior nuevo.",
     image:
@@ -63,6 +67,7 @@ export default function Home() {
           cars.map((car) => (
             <CarCard
               key={car.image}
+              _id={car._id}
               main={car.main}
               second={car.second}
               image={car.image}
