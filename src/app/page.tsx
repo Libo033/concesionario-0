@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import CarCard from "@/componentes/cards/CarCard";
 
@@ -11,6 +10,8 @@ const cars = [
       "https://res.cloudinary.com/dsuydyqgz/image/upload/v1709924143/06-concesionario/p7zkdo1tgnvd07guefpa.jpg",
     km: 67000,
     ubi: "Capital Federal, Buenos Aires",
+    price: 16000,
+    exchange: "U$D",
   },
   {
     _id: "2",
@@ -20,6 +21,8 @@ const cars = [
       "https://res.cloudinary.com/dsuydyqgz/image/upload/v1709924138/06-concesionario/xkdlq4krldnrbdqkz5io.jpg",
     km: 30000,
     ubi: "Capital Federal, Buenos Aires",
+    price: 12000,
+    exchange: "U$D",
   },
   {
     _id: "3",
@@ -29,6 +32,8 @@ const cars = [
       "https://res.cloudinary.com/dsuydyqgz/image/upload/v1709924082/06-concesionario/jgnlcewyppbz9sdkwghb.jpg",
     km: 12000,
     ubi: "Canning, Buenos Aires",
+    price: 32000,
+    exchange: "U$D",
   },
   {
     _id: "4",
@@ -38,6 +43,8 @@ const cars = [
       "https://res.cloudinary.com/dsuydyqgz/image/upload/v1709924045/06-concesionario/odzpz9qecs0ui6xxe83f.jpg",
     km: 24000,
     ubi: "Nuñes, Buenos Aires",
+    price: 25000,
+    exchange: "U$D",
   },
   {
     _id: "5",
@@ -47,6 +54,8 @@ const cars = [
       "https://res.cloudinary.com/dsuydyqgz/image/upload/v1709924018/06-concesionario/mgaxef4yjau6jqtukmhw.jpg",
     km: 30000,
     ubi: "Canning, Buenos Aires",
+    price: 91000,
+    exchange: "U$D",
   },
   {
     _id: "6",
@@ -56,6 +65,8 @@ const cars = [
       "https://res.cloudinary.com/dsuydyqgz/image/upload/v1709923929/06-concesionario/ue3mbtaokdce9fnohaeh.jpg",
     km: 87000,
     ubi: "Luis Guillon, Buenos Aires",
+    price: 22500,
+    exchange: "U$D",
   },
 ];
 
@@ -73,6 +84,8 @@ export default function Home() {
               image={car.image}
               km={car.km}
               ubi={car.ubi}
+              price={car.price}
+              exchange={car.exchange}
             />
           ))}
       </section>

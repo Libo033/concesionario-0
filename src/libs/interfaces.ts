@@ -5,4 +5,6 @@ export interface ICarCard {
   km: number;
   ubi: string;
   image: string;
+  price: number;
+  exchange: string;
 }

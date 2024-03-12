@@ -15,6 +15,9 @@ const CarCard: React.FC<ICarCard> = (props) => {
     >
       <div className={styles.CarCard_Image}>
         <Image src={props.image} alt={props.main} width={800} height={800} />
+        <p className={styles.CarCard_Price}>
+          {props.exchange} {Intl.NumberFormat().format(props.price)}
+        </p>
       </div>
       <div className={styles.CarCard_Info}>
         <p className={styles.CarCard_InfoMain}>{props.main.slice(0, 27)}</p>
