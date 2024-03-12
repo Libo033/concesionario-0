@@ -1,6 +1,7 @@
 .Swiper {
+  margin: 0;
   margin-block: 24px;
-  width: 51%;
+  width: 57%;
   height: auto;
 }
 
@@ -9,4 +10,16 @@
   width: 100%;
   height: fit-content;
   border-radius: 9px;
+}
+
+@media (641px <= width <= 1024px) {
+  .Swiper {
+    width: 90%;
+  }
+}
+
+@media (width <= 640px) {
+  .Swiper {
+    width: 100%;
+  }
 }

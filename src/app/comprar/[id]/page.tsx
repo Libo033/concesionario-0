@@ -6,10 +6,13 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import SwiperComprar from "@/componentes/others/SwiperComprar";
+import { Button } from "@mui/material";
 
 const car = {
   _id: "4",
-  main: "Honda S2000 2007",
+  brand: "Honda",
+  model: "S2000",
+  year: "2007",
   second: "Perfecto estado. Detalles minimos. Transimision manual.",
   image: [
     "https://res.cloudinary.com/dsuydyqgz/image/upload/v1709924045/06-concesionario/odzpz9qecs0ui6xxe83f.jpg",
@@ -18,14 +21,36 @@ const car = {
     "https://res.cloudinary.com/dsuydyqgz/image/upload/v1710180925/06-concesionario/xruzscfhhi3otpv6h7n1.jpg",
   ],
   km: 24000,
-  ubi: "Nuñes, Buenos Aires",
+  province: "Buenos Aires",
+  localidad: "Nuñes",
 };
 
 const ComprarID = ({ params }: { params: { id: string } }) => {
   return (
     <div className={styles.ComprarID}>
-      <div>
-        <SwiperComprar images={car.image} alt={car.main} />
+      <div className={styles.ComprarID_Top}>
+        <SwiperComprar images={car.image} alt={car.brand} />
+        <div className={styles.SideDataCard}>
+          <p className={styles.SideDataCard_Title}>
+            {car.brand} {car.model}
+          </p>
+          <p className={styles.SideDataCard_Info}>
+            {Intl.NumberFormat().format(car.km)}km • {car.province}
+          </p>
+          <p className={styles.SideDataCard_Top}>Precio contado</p>
+          <p className={styles.SideDataCard_Precio}>
+            U$D {Intl.NumberFormat().format(24000)}
+          </p>
+          <p className={styles.SideDataCard_Top}>Año</p>
+          <p className={styles.SideDataCard_Bottom}>{car.year}</p>
+          <p className={styles.SideDataCard_Top}>Motor</p>
+          <p className={styles.SideDataCard_Bottom}>2.2L</p>
+          <p className={styles.SideDataCard_Top}>Transmision</p>
+          <p className={styles.SideDataCard_Bottom}>Manual</p>
+          <Button sx={{ marginBlock: "18px" }} variant="contained">
+            contactar
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -1,3 +1,82 @@
 .ComprarID {
   padding-top: 15vh;
 }
+
+.ComprarID_Top {
+  padding-inline: 24px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1.8rem;
+}
+
+.SideDataCard {
+  margin: 0;
+  border: 1px solid gainsboro;
+  width: 33%;
+  height: fit-content;
+  border-radius: 12px;
+  margin-block: 24px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.SideDataCard_Title {
+  width: 100%;
+  font-size: x-large;
+  font-weight: 600;
+
+  padding-bottom: 9px;
+}
+
+.SideDataCard_Info {
+  color: black;
+  font-weight: 400;
+  border-bottom: 1px solid gainsboro;
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+.SideDataCard_Top {
+  padding-top: 18px;
+  width: 100%;
+  font-size: large;
+}
+
+.SideDataCard_Bottom {
+  padding-bottom: 10px;
+  width: 100%;
+  font-size: larger;
+  font-weight: 600;
+  border-bottom: 1px solid gainsboro;
+}
+
+.SideDataCard_Precio {
+  padding-bottom: 10px;
+  width: 100%;
+  font-size: xx-large;
+  font-weight: 600;
+  border-bottom: 1px solid gainsboro;
+}
+
+@media (width <= 1200px) {
+  .SideDataCard_Top {
+    display: none;
+  }
+
+  .SideDataCard_Bottom {
+    display: none;
+  }
+}
+
+@media (641px <= width <= 1024px) {
+  .SideDataCard {
+    display: none;
+  }
+}
+
+@media (width <= 640px) {
+  .SideDataCard {
+    display: none;
+  }
+}
