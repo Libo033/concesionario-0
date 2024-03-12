@@ -121,6 +121,12 @@
 }
 /*#endregion */
 
+/*#region BOTTOM DATA CARD */
+.BottomData {
+  display: none;
+}
+/*#endregion */
+
 @media (width <= 1200px) {
   /*#region SIDE DATA CARD */
   .SideDataCard_Top {
@@ -139,12 +145,73 @@
     display: none;
   }
   /*#endregion */
+
+  /*#region BOTTOM DATA CARD */
+  .BottomData {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .BottomData_Title {
+    width: 100%;
+    text-align: left;
+    font-size: xx-large;
+    text-wrap: pretty;
+    font-weight: 600;
+    padding-bottom: 12px;
+  }
+
+  .BottomData_Top {
+    padding-top: 6px;
+    width: 100%;
+    font-size: large;
+    color: #454545;
+  }
+
+  .BottomData_Price {
+    width: 100%;
+    font-size: xx-large;
+    font-weight: 700;
+    padding-bottom: 12px;
+  }
+  /*#endregion */
 }
 
 @media (width <= 640px) {
   /*#region SIDE DATA CARD */
   .SideDataCard {
     display: none;
+  }
+  /*#endregion */
+
+  /*#region BOTTOM DATA CARD */
+  .BottomData {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .BottomData_Title {
+    width: 100%;
+    text-align: left;
+    font-size: xx-large;
+    text-wrap: pretty;
+    font-weight: 600;
+    padding-bottom: 12px;
+  }
+
+  .BottomData_Top {
+    padding-top: 6px;
+    width: 100%;
+    font-size: large;
+  }
+
+  .BottomData_Price {
+    width: 100%;
+    font-size: x-large;
+    font-weight: 700;
+    padding-bottom: 12px;
   }
   /*#endregion */
 }

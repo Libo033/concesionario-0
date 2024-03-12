@@ -3,6 +3,7 @@ import React from "react";
 import styles from "../page.module.css";
 import SwiperComprar from "@/componentes/others/SwiperComprar";
 import SideDataCard from "@/componentes/cards/SideDataCard";
+import BottomDataCard from "@/componentes/cards/BottomDataCard";
 
 // https://carfromjapan.com/cheap-used-honda-s2000-2007-for-sale-64e514651e29ffc2795fafac
 
@@ -43,15 +44,12 @@ const ComprarID = ({ params }: { params: { id: string } }) => {
           motor={car.motor}
           transmision={car.transmision}
         />
-        <div className={styles.BottomData}>
-          <p className={styles.BottomData_Title}>
-            {car.brand} {car.model}
-          </p>
-          <p className={styles.BottomData_Top}>Precio contado</p>
-          <p className={styles.BottomData_Price}>
-            {car.exchange} {Intl.NumberFormat().format(car.price)}
-          </p>
-        </div>
+        <BottomDataCard
+          brand={car.brand}
+          model={car.model}
+          exchange={car.exchange}
+          price={car.price}
+        />
       </div>
     </div>
   );
