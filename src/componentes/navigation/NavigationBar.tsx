@@ -6,10 +6,11 @@ import { Button, Drawer, InputAdornment, TextField } from "@mui/material";
 import { Menu, Search } from "@mui/icons-material";
 import Image from "next/image";
 import NavigationDrawer from "./NavigationDrawer";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const NavigationBar = () => {
   const r = useRouter();
+  const path = usePathname();
   const [toggleDrawer, setToggleDrawer] = useState(false);
 
   return (
@@ -32,20 +33,22 @@ const NavigationBar = () => {
         </li>
       </ul>
       <div className={styles.NavigationBar_Search}>
-        <TextField
-          fullWidth
-          autoComplete="off"
-          placeholder="Buscar por marca o modelo."
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Search />
-              </InputAdornment>
-            ),
-          }}
-          variant="outlined"
-          sx={{ backgroundColor: "#fff" }}
-        />
+        {path === "/" && (
+          <TextField
+            fullWidth
+            autoComplete="off"
+            placeholder="Buscar por marca o modelo."
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Search />
+                </InputAdornment>
+              ),
+            }}
+            variant="outlined"
+            sx={{ backgroundColor: "#fff" }}
+          />
+        )}
       </div>
       <div className={styles.NavigationBar_Login}>
         <Button variant="contained">ingresar</Button>
@@ -53,23 +56,25 @@ const NavigationBar = () => {
       <div className={styles.NavigationBar_Menu}>
         <Menu onClick={() => setToggleDrawer(true)} sx={{ fontSize: "39px" }} />
       </div>
-      <div className={styles.NavigationBar_Search2}>
-        <TextField
-          fullWidth
-          autoComplete="off"
-          placeholder="Buscar por marca o modelo."
-          size="small"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Search />
-              </InputAdornment>
-            ),
-          }}
-          variant="outlined"
-          sx={{ backgroundColor: "#fff" }}
-        />
-      </div>
+      {path === "/" && (
+        <div className={styles.NavigationBar_Search2}>
+          <TextField
+            fullWidth
+            autoComplete="off"
+            placeholder="Buscar por marca o modelo."
+            size="small"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Search />
+                </InputAdornment>
+              ),
+            }}
+            variant="outlined"
+            sx={{ backgroundColor: "#fff" }}
+          />
+        </div>
+      )}
       <Drawer
         anchor="top"
         open={toggleDrawer}
