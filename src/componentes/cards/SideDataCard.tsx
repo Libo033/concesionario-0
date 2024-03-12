@@ -23,7 +23,7 @@ const SideDataCard: React.FC<ISideDataCard> = (car) => {
       <p className={styles.SideDataCard_Info}>
         {Intl.NumberFormat().format(car.km)}km • {car.province}
       </p>
-      <p className={styles.SideDataCard_Top}>Precio contado</p>
+      <p className={styles.SideDataCard_Contado}>Precio contado</p>
       <p className={styles.SideDataCard_Precio}>
         {car.exchange} {Intl.NumberFormat().format(car.price)}
       </p>

@@ -98,6 +98,12 @@
   padding-bottom: 6px;
 }
 
+.SideDataCard_Contado {
+  padding-top: 18px;
+  width: 100%;
+  font-size: large;
+}
+
 .SideDataCard_Top {
   padding-top: 18px;
   width: 100%;
