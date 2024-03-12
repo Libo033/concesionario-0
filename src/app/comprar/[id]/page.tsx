@@ -1,13 +1,11 @@
 "use client";
 import React from "react";
 import styles from "../page.module.css";
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import SwiperComprar from "@/componentes/others/SwiperComprar";
 
 const car = {
   _id: "4",
@@ -26,31 +24,8 @@ const car = {
 const ComprarID = ({ params }: { params: { id: string } }) => {
   return (
     <div className={styles.ComprarID}>
-      <div className={styles.Swiper}>
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          slidesPerView={1}
-          autoplay={{ disableOnInteraction: false }}
-          loop={true}
-          centeredSlides={true}
-          navigation={true}
-          pagination={{
-            clickable: true,
-          }}
-        >
-          {car.image.length > 0 &&
-            car.image.map((img) => (
-              <SwiperSlide key={img}>
-                <Image
-                  className={styles.Swiper_Image}
-                  src={img}
-                  alt={car.main}
-                  width={800}
-                  height={800}
-                />
-              </SwiperSlide>
-            ))}
-        </Swiper>
+      <div>
+        <SwiperComprar images={car.image} alt={car.main} />
       </div>
     </div>
   );

@@ -1,0 +1,12 @@
+.Swiper {
+  margin-block: 24px;
+  width: 51%;
+  height: auto;
+}
+
+.Swiper_Image {
+  object-fit: contain;
+  width: 100%;
+  height: fit-content;
+  border-radius: 9px;
+}
