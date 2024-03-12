@@ -1,3 +1,4 @@
+/*#region CAR CARD */
 .CarCard {
   transition: 150ms ease-in-out;
   width: 100%;
@@ -51,4 +52,85 @@
   font-size: small;
   margin-top: 6px;
   color: #696969;
+}
+/*#endregion */
+
+/*#region SIDE DATA CARD */
+.SideDataCard {
+  margin: 0;
+  border: 1px solid gainsboro;
+  width: 33%;
+  height: fit-content;
+  border-radius: 12px;
+  margin-block: 24px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.SideDataCard_Title {
+  width: 100%;
+  font-size: x-large;
+  font-weight: 600;
+
+  padding-bottom: 9px;
+}
+
+.SideDataCard_Info {
+  color: black;
+  font-weight: 400;
+  border-bottom: 1px solid gainsboro;
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+.SideDataCard_Top {
+  padding-top: 18px;
+  width: 100%;
+  font-size: large;
+}
+
+.SideDataCard_Bottom {
+  padding-bottom: 10px;
+  width: 100%;
+  font-size: larger;
+  font-weight: 600;
+  border-bottom: 1px solid gainsboro;
+}
+
+.SideDataCard_Precio {
+  padding-bottom: 10px;
+  width: 100%;
+  font-size: xx-large;
+  font-weight: 600;
+  border-bottom: 1px solid gainsboro;
+}
+/*#endregion */
+
+@media (width <= 1200px) {
+  /*#region SIDE DATA CARD */
+  .SideDataCard_Top {
+    display: none;
+  }
+
+  .SideDataCard_Bottom {
+    display: none;
+  }
+  /*#endregion */
+}
+
+@media (641px <= width <= 1024px) {
+  /*#region SIDE DATA CARD */
+  .SideDataCard {
+    display: none;
+  }
+  /*#endregion */
+}
+
+@media (width <= 640px) {
+  /*#region SIDE DATA CARD */
+  .SideDataCard {
+    display: none;
+  }
+  /*#endregion */
 }
