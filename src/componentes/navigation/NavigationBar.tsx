@@ -6,14 +6,17 @@ import { Button, Drawer, InputAdornment, TextField } from "@mui/material";
 import { Menu, Search } from "@mui/icons-material";
 import Image from "next/image";
 import NavigationDrawer from "./NavigationDrawer";
+import { useRouter } from "next/navigation";
 
 const NavigationBar = () => {
+  const r = useRouter();
   const [toggleDrawer, setToggleDrawer] = useState(false);
 
   return (
     <nav className={styles.NavigationBar}>
       <div className={styles.NavigationBar_Logo}>
         <Image
+          onClick={() => r.push("/")}
           src={"/image/LIBO-no-bg.png"}
           alt="LIBO"
           width={500}

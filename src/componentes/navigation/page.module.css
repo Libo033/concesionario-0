@@ -19,6 +19,7 @@
 .NavigationBar_Logo img {
   width: 108px;
   height: auto;
+  cursor: pointer;
 }
 
 .NavigationBar_Ul {
