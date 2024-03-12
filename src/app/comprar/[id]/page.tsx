@@ -43,6 +43,15 @@ const ComprarID = ({ params }: { params: { id: string } }) => {
           motor={car.motor}
           transmision={car.transmision}
         />
+        <div className={styles.BottomData}>
+          <p className={styles.BottomData_Title}>
+            {car.brand} {car.model}
+          </p>
+          <p className={styles.BottomData_Top}>Precio contado</p>
+          <p className={styles.BottomData_Price}>
+            {car.exchange} {Intl.NumberFormat().format(car.price)}
+          </p>
+        </div>
       </div>
     </div>
   );

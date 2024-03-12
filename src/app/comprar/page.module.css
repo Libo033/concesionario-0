@@ -9,3 +9,53 @@
   gap: 1.8rem;
   border-bottom: 1px solid gainsboro;
 }
+
+.BottomData {
+  display: none;
+}
+
+@media (641px <= width <= 1024px) {
+  .BottomData {
+    display: none;
+  }
+}
+
+@media (width <= 640px) {
+  .ComprarID {
+    padding-top: 146px;
+  }
+
+  .ComprarID_Top {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+  }
+
+  .BottomData {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .BottomData_Title {
+    width: 100%;
+    text-align: left;
+    font-size: xx-large;
+    text-wrap: pretty;
+    font-weight: 600;
+    padding-bottom: 12px;
+  }
+
+  .BottomData_Top {
+    padding-top: 6px;
+    width: 100%;
+    font-size: large;
+  }
+
+  .BottomData_Price {
+    width: 100%;
+    font-size: x-large;
+    font-weight: 700;
+    padding-bottom: 12px;
+  }
+}
