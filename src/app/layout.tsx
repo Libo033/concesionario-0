@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/componentes/navigation/NavigationBar";
+import Footer from "@/componentes/others/Footer";
 
 const titi = Titillium_Web({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={titi.className}>
         <NavigationBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

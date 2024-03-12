@@ -1,3 +1,4 @@
+/*#region SWIPER COMPRAR */
 .Swiper {
   margin: 0;
   margin-block: 24px;
@@ -11,15 +12,105 @@
   height: fit-content;
   border-radius: 9px;
 }
+/*#endregion */
+
+/*#region FOOTER */
+.Footer {
+  margin-top: 24px;
+  background-color: white;
+  border-top: 1px solid gainsboro;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 36px 24px;
+}
+
+.Footer_Logo {
+  margin: 0;
+  width: 20%;
+  height: fit-content;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.Footer_Logo img {
+  margin: 0;
+  width: 90px;
+  height: auto;
+}
+
+.Footer_Mid {
+  margin: 0;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.Footer_Mid p {
+  margin: 0;
+  font-size: larger;
+  font-weight: 700;
+  color: #515151;
+  margin-bottom: 9px;
+}
+
+.Footer_Mid a {
+  width: fit-content;
+  margin: 0;
+  color: black;
+  text-decoration: none;
+}
+
+.Footer_Mid a:hover {
+  text-decoration: underline;
+}
+/*#endregion */
 
 @media (641px <= width <= 1024px) {
+  /*#region SWIPER COMPRAR */
   .Swiper {
     width: 90%;
   }
+  /*#endregion */
+
+  /*#region FOOTER */
+  .Footer_Mid {
+    width: 25%;
+  }
+
+  .Footer_Mid p {
+    font-size: medium;
+  }
+
+  .Footer_Mid a {
+    font-size: small;
+  }
+  /*#endregion */
 }
 
 @media (width <= 640px) {
+  /*#region SWIPER COMPRAR */
   .Swiper {
     width: 100%;
   }
+  /*#endregion */
+
+  /*#region FOOTER */
+  .Footer {
+    padding: 24px 24px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .Footer_Logo {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .Footer_Mid {
+    width: fit-content;
+    margin-bottom: 24px;
+  }
+  /*#endregion */
 }
