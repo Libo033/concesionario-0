@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
 import styles from "../page.module.css";
-
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import SwiperComprar from "@/componentes/others/SwiperComprar";
 import SideDataCard from "@/componentes/cards/SideDataCard";
+
+// https://carfromjapan.com/cheap-used-honda-s2000-2007-for-sale-64e514651e29ffc2795fafac
 
 const car = {
   _id: "4",
