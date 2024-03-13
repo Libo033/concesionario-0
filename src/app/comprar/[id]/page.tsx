@@ -4,6 +4,7 @@ import styles from "../page.module.css";
 import SwiperComprar from "@/componentes/others/SwiperComprar";
 import SideDataCard from "@/componentes/cards/SideDataCard";
 import BottomDataCard from "@/componentes/cards/BottomDataCard";
+import BasicInfo from "@/componentes/others/BasicInfo";
 
 // https://carfromjapan.com/cheap-used-honda-s2000-2007-for-sale-64e514651e29ffc2795fafac
 
@@ -50,6 +51,9 @@ const ComprarID = ({ params }: { params: { id: string } }) => {
           exchange={car.exchange}
           price={car.price}
         />
+      </div>
+      <div className={styles.ComprarID_Bottom}>
+        <BasicInfo />
       </div>
     </div>
   );

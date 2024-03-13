@@ -11,6 +11,10 @@
   border-bottom: 1px solid gainsboro;
 }
 
+.ComprarID_Bottom {
+  margin-inline: 24px;
+}
+
 @media (641px <= width <= 1024px) {
   .ComprarID_Top {
     display: flex;

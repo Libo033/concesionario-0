@@ -67,6 +67,27 @@
 }
 /*#endregion */
 
+/*#region BASIC INFO */
+.BasicInfo {
+  margin: 0;
+  padding-top: 24px;
+  width: 100%;
+}
+
+.BasicInfo_Title {
+  font-size: x-large;
+  font-weight: 600;
+  color: #303030;
+  margin-bottom: 12px;
+}
+
+.BasicInfo_AccordionTitle {
+  font-size: large;
+  font-weight: 600;
+  margin: 0;
+}
+/*#endregion */
+
 @media (641px <= width <= 1024px) {
   /*#region SWIPER COMPRAR */
   .Swiper {
