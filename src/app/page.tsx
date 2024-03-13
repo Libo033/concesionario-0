@@ -1,7 +1,11 @@
+"use client";
 import styles from "./page.module.css";
 import CarCard from "@/componentes/cards/CarCard";
+import { KeyboardArrowDown } from "@mui/icons-material";
+import { ClickAwayListener, Tooltip } from "@mui/material";
+import { useState } from "react";
 
-const cars = [
+const carsToSell = [
   {
     _id: "1",
     main: "Nissan Silvia 2001",
@@ -70,9 +74,69 @@ const cars = [
   },
 ];
 
-export default function Home() {
+const ToolTipOptions: React.FC<{ handleSetValue: (value: string) => void }> = ({
+  handleSetValue,
+}) => {
   return (
-    <div className={styles.Home}>
+    <div className={styles.ToolTipOptions}>
+      <p onClick={() => handleSetValue("Menor precio")}>Menor precio</p>
+      <p onClick={() => handleSetValue("Mayor precio")}>Mayor precio</p>
+      <p onClick={() => handleSetValue("Mas antiguos")}>Mas antiguos</p>
+      <p onClick={() => handleSetValue("Mas recientes")}>Mas recientes</p>
+      <p onClick={() => handleSetValue("Menos km")}>Menos km</p>
+      <p onClick={() => handleSetValue("Mas km")}>Mas km</p>
+      <p onClick={() => handleSetValue("default")}>reset</p>
+    </div>
+  );
+};
+
+export default function Home() {
+  const [cars, setCars] = useState(carsToSell);
+  const [value, setValue] = useState<string>("default");
+  const [toolTip, setToolTip] = useState<boolean>(false);
+
+  const handleSetValue = (value: string) => {
+    setValue(value);
+    switch (value) {
+      case "Menor precio":
+        break;
+      case "Mayor precio":
+        break;
+      case "Mas antiguos":
+        break;
+      case "Mas recientes":
+        break;
+      case "Menos km":
+        break;
+      case "Mas km":
+        break;
+      case "default":
+        break;
+      default:
+        break;
+    }
+  };
+
+  return (
+    <div onScroll={() => setToolTip(false)} className={styles.Home}>
+      <div className={styles.Order}>
+        <ClickAwayListener onClickAway={() => setToolTip(false)}>
+          <Tooltip
+            title={<ToolTipOptions handleSetValue={handleSetValue} />}
+            open={toolTip}
+          >
+            <p
+              onClick={() => setToolTip(!toolTip)}
+              className={styles.Order_Container}
+            >
+              Ordenar: <span className={styles.Order_Span}>{value}</span>
+              <KeyboardArrowDown
+                sx={{ margin: "0", fontSize: "21px", color: "#1976d2" }}
+              />
+            </p>
+          </Tooltip>
+        </ClickAwayListener>
+      </div>
       <section className={styles.Home_Cars}>
         {cars.length > 0 &&
           cars.map((car) => (

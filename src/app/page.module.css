@@ -3,12 +3,52 @@
 }
 
 .Home_Cars {
-  padding: 30px;
+  padding: 21px 30px 30px 30px;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   row-gap: 2.7rem;
   column-gap: 2.7rem;
+}
+
+.Order {
+  padding: 12px 30px 0 30px;
+  width: 100%;
+  margin: 0;
+}
+
+.Order_Container {
+  width: fit-content;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  cursor: pointer;
+}
+
+.Order_Span {
+  padding-left: 9px;
+  color: #1976d2;
+  margin: 0;
+}
+
+.ToolTipOptions {
+  background-color: white;
+}
+
+.ToolTipOptions p {
+  color: black;
+  padding: 12px 9px;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.ToolTipOptions p:hover {
+  background-color: #e8e8e8;
+}
+
+.ToolTipOptions p:not(:last-child) {
+  border-bottom: 1px solid gainsboro;
 }
 
 @media (641px <= width <= 1024px) {
