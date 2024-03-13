@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import styles from "./page.module.css";
 import { styled } from "@mui/material/styles";
 import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
@@ -13,8 +13,8 @@ const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
   border: `none`,
-  "&:not(:last-child)": {
-    borderBottom: 0,
+  "&": {
+    borderBottom: `1px solid #1976d260`,
   },
   "&::before": {
     display: "none",
@@ -31,7 +31,6 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
     theme.palette.mode === "dark"
       ? "rgba(255, 255, 255, .05)"
       : "rgba(255, 255, 255)",
-  borderBottom: `1px solid #1976d260`,
   flexDirection: "row-reverse",
   "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
     transform: "rotate(90deg)",
@@ -43,7 +42,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   padding: theme.spacing(2),
-  borderTop: "1px solid #1976d260",
+  paddingTop: "6px",
 }));
 
 const caracteristicas = [
@@ -75,7 +74,7 @@ const caracteristicas = [
 ];
 
 const BasicInfo = () => {
-  const [expanded, setExpanded] = useState<string | false>("panel1");
+  const [expanded, setExpanded] = useState<string | false>("");
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
@@ -86,85 +85,32 @@ const BasicInfo = () => {
     <div className={styles.BasicInfo}>
       <p className={styles.BasicInfo_Title}>Caracteristicas</p>
       <div className={styles.BasicInfo_Accordion}>
-        <Accordion
-          expanded={expanded === "panel1"}
-          onChange={handleChange("panel1")}
-        >
-          <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-            <p className={styles.BasicInfo_AccordionTitle}>General</p>
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel2"}
-          onChange={handleChange("panel2")}
-        >
-          <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-            <p className={styles.BasicInfo_AccordionTitle}>Exterior</p>
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel3"}
-          onChange={handleChange("panel3")}
-        >
-          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-            <p className={styles.BasicInfo_AccordionTitle}>Seguridad</p>
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel4"}
-          onChange={handleChange("panel4")}
-        >
-          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-            <p className={styles.BasicInfo_AccordionTitle}>Modificaciones</p>
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel5"}
-          onChange={handleChange("panel5")}
-        >
-          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-            <p className={styles.BasicInfo_AccordionTitle}>
-              Equipamiento y confort
-            </p>
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel6"}
-          onChange={handleChange("panel6")}
-        >
-          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-            <p className={styles.BasicInfo_AccordionTitle}>Entretenimiento</p>
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === "panel7"}
-          onChange={handleChange("panel7")}
-        >
-          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-            <p className={styles.BasicInfo_AccordionTitle}>Otros</p>
-          </AccordionSummary>
-          <AccordionDetails>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </AccordionDetails>
-        </Accordion>
+        {caracteristicas.map((c) => (
+          <Fragment key={c.titulo}>
+            {c.data.length > 0 && (
+              <Accordion
+                expanded={expanded === c.titulo}
+                onChange={handleChange(c.titulo)}
+              >
+                <AccordionSummary
+                  aria-controls="panel1d-content"
+                  id="panel1d-header"
+                >
+                  <p className={styles.BasicInfo_AccordionTitle}>{c.titulo}</p>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <div className={styles.BasicInfo_Datos}>
+                    {c.data.map((d) => (
+                      <p key={d} className={styles.BasicInfo_Dato}>
+                        · {d}
+                      </p>
+                    ))}
+                  </div>
+                </AccordionDetails>
+              </Accordion>
+            )}
+          </Fragment>
+        ))}
       </div>
     </div>
   );

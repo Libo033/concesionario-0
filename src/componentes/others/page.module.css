@@ -86,6 +86,21 @@
   font-weight: 600;
   margin: 0;
 }
+
+.BasicInfo_Datos {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.6rem;
+  padding-left: 24px;
+}
+
+.BasicInfo_Dato {
+  width: 25%;
+  font-size: medium;
+  font-weight: 600;
+  margin: 0;
+}
 /*#endregion */
 
 @media (641px <= width <= 1024px) {
@@ -106,6 +121,12 @@
 
   .Footer_Mid a {
     font-size: small;
+  }
+  /*#endregion */
+
+  /*#region BASIC INFO */
+  .BasicInfo_Dato {
+    width: 45%;
   }
   /*#endregion */
 }
@@ -132,6 +153,13 @@
   .Footer_Mid {
     width: fit-content;
     margin-bottom: 24px;
+  }
+  /*#endregion */
+
+  /*#region BASIC INFO */
+  .BasicInfo_Dato {
+    width: 90%;
+    font-weight: 500;
   }
   /*#endregion */
 }
