@@ -2,7 +2,7 @@
 import OrderCars from "@/componentes/others/OrderCars";
 import styles from "./page.module.css";
 import CarCard from "@/componentes/cards/CarCard";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 
 const carsToSell = [
   {
@@ -111,6 +111,7 @@ export default function Home() {
       default:
         break;
     }
+    setToolTip(false);
   };
 
   return (

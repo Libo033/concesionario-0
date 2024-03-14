@@ -35,20 +35,28 @@ const OrderCars: React.FC<IOrderCars> = ({
   return (
     <div className={styles.Order}>
       <ClickAwayListener onClickAway={() => setToolTip(false)}>
-        <Tooltip
-          title={<ToolTipOptions handleSetValue={handleSetValue} />}
-          open={open}
-        >
-          <p
-            onClick={() => setToolTip(!open)}
-            className={styles.Order_Container}
+        <div>
+          <Tooltip
+            disableFocusListener
+            disableHoverListener
+            disableTouchListener
+            title={<ToolTipOptions handleSetValue={handleSetValue} />}
+            open={open}
+            PopperProps={{
+              disablePortal: true,
+            }}
           >
-            Ordenar: <span className={styles.Order_Span}>{value}</span>
-            <KeyboardArrowDown
-              sx={{ margin: "0", fontSize: "21px", color: "#1976d2" }}
-            />
-          </p>
-        </Tooltip>
+            <p
+              onClick={() => setToolTip(!open)}
+              className={styles.Order_Container}
+            >
+              Ordenar: <span className={styles.Order_Span}>{value}</span>
+              <KeyboardArrowDown
+                sx={{ margin: "0", fontSize: "21px", color: "#1976d2" }}
+              />
+            </p>
+          </Tooltip>
+        </div>
       </ClickAwayListener>
     </div>
   );
