@@ -3,7 +3,7 @@ import { ICar } from "@/libs/interfaces";
 import { createContext, useState, useEffect } from "react";
 
 interface ICarContext {
-  load: boolean;
+  loadCars: boolean;
   cars: ICar[];
 }
 
@@ -101,7 +101,7 @@ const defaultCars: ICar[] = [
 ];
 
 const defaultValue: ICarContext = {
-  load: false,
+  loadCars: false,
   cars: defaultCars,
 };
 
@@ -111,14 +111,16 @@ export const CarContext: React.Context<ICarContext> =
 export const CarContextProvider: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  const [load, setLoad] = useState<boolean>(false);
+  const [loadCars, setLoadCars] = useState<boolean>(false);
   const [cars, setCars] = useState<ICar[]>(defaultCars);
 
   useEffect(() => {
-    setLoad(true);
+    setLoadCars(true);
   }, []);
 
   return (
-    <CarContext.Provider value={{ load, cars }}>{children}</CarContext.Provider>
+    <CarContext.Provider value={{ loadCars, cars }}>
+      {children}
+    </CarContext.Provider>
   );
 };

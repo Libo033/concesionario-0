@@ -1,14 +1,3 @@
-export interface ICarCard {
-  _id: string;
-  main: string;
-  second: string;
-  km: number;
-  ubi: string;
-  image: string;
-  price: number;
-  exchange: string;
-}
-
 export interface ICar {
   _id: string;
   marca: string;
