@@ -3,6 +3,7 @@ import { Titillium_Web } from "next/font/google";
 import "./globals.css";
 import NavigationBar from "@/componentes/navigation/NavigationBar";
 import Footer from "@/componentes/others/Footer";
+import { CarContextProvider } from "@/context/CarContext";
 
 const titi = Titillium_Web({
   subsets: ["latin"],
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={titi.className}>
-        <NavigationBar />
-        {children}
-        <Footer />
+        <CarContextProvider>
+          <NavigationBar />
+          {children}
+          <Footer />
+        </CarContextProvider>
       </body>
     </html>
   );
