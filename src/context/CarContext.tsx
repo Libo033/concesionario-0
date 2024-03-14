@@ -1,11 +1,13 @@
 "use client";
 import { ICar } from "@/libs/interfaces";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, ChangeEvent } from "react";
 
 interface ICarContext {
   loadCars: boolean;
   cars: ICar[];
   filterBy: (value: string) => void;
+  search: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const defaultCars: ICar[] = [
@@ -105,6 +107,8 @@ const defaultValue: ICarContext = {
   loadCars: false,
   cars: defaultCars,
   filterBy: (v: string) => {},
+  search: "",
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => {},
 };
 
 export const CarContext: React.Context<ICarContext> =
@@ -113,8 +117,24 @@ export const CarContext: React.Context<ICarContext> =
 export const CarContextProvider: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
+  const [search, setSearch] = useState<string>("");
   const [loadCars, setLoadCars] = useState<boolean>(false);
   const [cars, setCars] = useState<ICar[]>(defaultCars);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+    if (e.target.value === "") {
+      setCars(defaultCars);
+    } else {
+      setCars(
+        cars.filter(
+          (c) =>
+            c.marca.toLowerCase().includes(e.target.value.toLowerCase()) ||
+            c.modelo.toLowerCase().includes(e.target.value.toLowerCase())
+        )
+      );
+    }
+  };
 
   const filterBy = (value: string) => {
     switch (value) {
@@ -149,7 +169,9 @@ export const CarContextProvider: React.FC<{
   }, []);
 
   return (
-    <CarContext.Provider value={{ loadCars, cars, filterBy }}>
+    <CarContext.Provider
+      value={{ loadCars, cars, filterBy, search, handleChange }}
+    >
       {children}
     </CarContext.Provider>
   );

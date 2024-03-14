@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { ChangeEvent, useContext, useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { Button, Drawer, InputAdornment, TextField } from "@mui/material";
@@ -7,8 +7,10 @@ import { Menu, Search } from "@mui/icons-material";
 import Image from "next/image";
 import NavigationDrawer from "./NavigationDrawer";
 import { usePathname, useRouter } from "next/navigation";
+import { CarContext } from "@/context/CarContext";
 
 const NavigationBar = () => {
+  const { search, handleChange } = useContext(CarContext);
   const r = useRouter();
   const path = usePathname();
   const [toggleDrawer, setToggleDrawer] = useState(false);
@@ -36,6 +38,8 @@ const NavigationBar = () => {
         {path === "/" && (
           <TextField
             fullWidth
+            value={search}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
             autoComplete="off"
             placeholder="Buscar por marca o modelo."
             InputProps={{
@@ -60,6 +64,8 @@ const NavigationBar = () => {
         <div className={styles.NavigationBar_Search2}>
           <TextField
             fullWidth
+            value={search}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
             autoComplete="off"
             placeholder="Buscar por marca o modelo."
             size="small"
