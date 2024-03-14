@@ -3,6 +3,8 @@
 }
 
 .Home_Cars {
+  min-height: 60vh;
+  height: fit-content;
   padding: 21px 30px 30px 30px;
   display: grid;
   place-items: center;
@@ -12,12 +14,15 @@
 }
 
 .Home_NotFound {
+  min-height: 54vh;
+  height: fit-content;
   text-align: center;
   font-size: larger;
   padding-block: 24px;
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 @media (641px <= width <= 1024px) {
