@@ -18,38 +18,33 @@ export default function Home() {
   };
 
   return (
-    <div onScroll={() => setToolTip(false)} className={styles.Home}>
+    <div className={styles.Home}>
       <OrderCars
         value={value}
         handleSetValue={handleSetValue}
         setToolTip={setToolTip}
         open={toolTip}
       />
-      <section className={styles.Home_Cars}>
-        {loadCars ? (
-          cars.length > 0 &&
-          cars.map((car) => <CarCard key={car._id} {...car} />)
+      {loadCars ? (
+        cars.length > 0 ? (
+          <section className={styles.Home_Cars}>
+            {cars.map((car) => (
+              <CarCard key={car._id} {...car} />
+            ))}
+          </section>
         ) : (
-          <>
-            <Skeleton
-              sx={{ width: "100%", height: "390px" }}
-              variant="rounded"
-            />
-            <Skeleton
-              sx={{ width: "100%", height: "390px" }}
-              variant="rounded"
-            />
-            <Skeleton
-              sx={{ width: "100%", height: "390px" }}
-              variant="rounded"
-            />
-            <Skeleton
-              sx={{ width: "100%", height: "390px" }}
-              variant="rounded"
-            />
-          </>
-        )}
-      </section>
+          <div className={styles.Home_NotFound}>
+            <p>No encontramos lo que estas buscando</p>
+          </div>
+        )
+      ) : (
+        <section className={styles.Home_Cars}>
+          <Skeleton sx={{ width: "100%", height: "390px" }} variant="rounded" />
+          <Skeleton sx={{ width: "100%", height: "390px" }} variant="rounded" />
+          <Skeleton sx={{ width: "100%", height: "390px" }} variant="rounded" />
+          <Skeleton sx={{ width: "100%", height: "390px" }} variant="rounded" />
+        </section>
+      )}
     </div>
   );
 }

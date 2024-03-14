@@ -11,6 +11,15 @@
   column-gap: 2.7rem;
 }
 
+.Home_NotFound {
+  text-align: center;
+  font-size: larger;
+  padding-block: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 @media (641px <= width <= 1024px) {
 }
 
