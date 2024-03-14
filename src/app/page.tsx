@@ -7,38 +7,13 @@ import { CarContext } from "@/context/CarContext";
 import { Skeleton } from "@mui/material";
 
 export default function Home() {
-  const { loadCars, cars: allCars } = useContext(CarContext);
-  const [cars, setCars] = useState(allCars);
+  const { loadCars, cars, filterBy } = useContext(CarContext);
   const [value, setValue] = useState<string>("default");
   const [toolTip, setToolTip] = useState<boolean>(false);
 
   const handleSetValue = (value: string) => {
     setValue(value);
-    switch (value) {
-      case "Menor precio":
-        setCars(allCars.sort((a, b) => a.precio - b.precio));
-        break;
-      case "Mayor precio":
-        setCars(allCars.sort((a, b) => b.precio - a.precio));
-        break;
-      case "Mas antiguos":
-        setCars(allCars.sort((a, b) => a.ano - b.ano));
-        break;
-      case "Mas recientes":
-        setCars(allCars.sort((a, b) => b.ano - a.ano));
-        break;
-      case "Menos km":
-        setCars(allCars.sort((a, b) => a.km - b.km));
-        break;
-      case "Mas km":
-        setCars(allCars.sort((a, b) => b.km - a.km));
-        break;
-      case "default":
-        setCars(allCars.sort((a, b) => parseInt(a._id) - parseInt(b._id)));
-        break;
-      default:
-        break;
-    }
+    filterBy(value);
     setToolTip(false);
   };
 

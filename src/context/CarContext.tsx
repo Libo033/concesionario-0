@@ -5,6 +5,7 @@ import { createContext, useState, useEffect } from "react";
 interface ICarContext {
   loadCars: boolean;
   cars: ICar[];
+  filterBy: (value: string) => void;
 }
 
 const defaultCars: ICar[] = [
@@ -103,6 +104,7 @@ const defaultCars: ICar[] = [
 const defaultValue: ICarContext = {
   loadCars: false,
   cars: defaultCars,
+  filterBy: (v: string) => {},
 };
 
 export const CarContext: React.Context<ICarContext> =
@@ -114,12 +116,40 @@ export const CarContextProvider: React.FC<{
   const [loadCars, setLoadCars] = useState<boolean>(false);
   const [cars, setCars] = useState<ICar[]>(defaultCars);
 
+  const filterBy = (value: string) => {
+    switch (value) {
+      case "Menor precio":
+        setCars(cars.sort((a, b) => a.precio - b.precio));
+        break;
+      case "Mayor precio":
+        setCars(cars.sort((a, b) => b.precio - a.precio));
+        break;
+      case "Mas antiguos":
+        setCars(cars.sort((a, b) => a.ano - b.ano));
+        break;
+      case "Mas recientes":
+        setCars(cars.sort((a, b) => b.ano - a.ano));
+        break;
+      case "Menos km":
+        setCars(cars.sort((a, b) => a.km - b.km));
+        break;
+      case "Mas km":
+        setCars(cars.sort((a, b) => b.km - a.km));
+        break;
+      case "default":
+        setCars(cars.sort((a, b) => parseInt(a._id) - parseInt(b._id)));
+        break;
+      default:
+        break;
+    }
+  };
+
   useEffect(() => {
     setLoadCars(true);
   }, []);
 
   return (
-    <CarContext.Provider value={{ loadCars, cars }}>
+    <CarContext.Provider value={{ loadCars, cars, filterBy }}>
       {children}
     </CarContext.Provider>
   );
