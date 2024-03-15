@@ -87,6 +87,8 @@
   margin-bottom: 48px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
 }
 
 .BasicInfo_Container {
@@ -192,6 +194,13 @@
   /*#endregion */
 
   /*#region BASIC INFO */
+  .BasicInfo_Container {
+    width: 30%;
+    text-wrap: pretty;
+    text-align: center;
+    justify-content: space-evenly;
+  }
+
   .BasicInfo_Dato {
     width: 45%;
   }
@@ -224,6 +233,14 @@
   /*#endregion */
 
   /*#region BASIC INFO */
+  .BasicInfo_Container {
+    margin: auto;
+    width: 60%;
+    text-wrap: pretty;
+    text-align: center;
+    justify-content: space-evenly;
+  }
+
   .BasicInfo_Dato {
     width: 90%;
     font-weight: 500;
