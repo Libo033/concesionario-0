@@ -16,79 +16,86 @@ const NavigationBar = () => {
   const [toggleDrawer, setToggleDrawer] = useState(false);
 
   return (
-    <nav className={styles.NavigationBar}>
-      <div className={styles.NavigationBar_Logo}>
-        <Image
-          onClick={() => r.push("/")}
-          src={"/image/LIBO-no-bg.png"}
-          alt="LIBO"
-          width={500}
-          height={500}
-        />
-      </div>
-      <ul className={styles.NavigationBar_Ul}>
-        <li>
-          <Link href={"/"}>Compra un auto</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Vende tu auto</Link>
-        </li>
-      </ul>
-      <div className={styles.NavigationBar_Search}>
-        {path === "/" && (
-          <TextField
-            fullWidth
-            value={search}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
-            autoComplete="off"
-            placeholder="Buscar por marca o modelo."
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <Search />
-                </InputAdornment>
-              ),
-            }}
-            variant="outlined"
-            sx={{ backgroundColor: "#fff" }}
-          />
-        )}
-      </div>
-      <div className={styles.NavigationBar_Login}>
-        <Button variant="contained">ingresar</Button>
-      </div>
-      <div className={styles.NavigationBar_Menu}>
-        <Menu onClick={() => setToggleDrawer(true)} sx={{ fontSize: "39px" }} />
-      </div>
-      {path === "/" && (
-        <div className={styles.NavigationBar_Search2}>
-          <TextField
-            fullWidth
-            value={search}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
-            autoComplete="off"
-            placeholder="Buscar por marca o modelo."
-            size="small"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <Search />
-                </InputAdornment>
-              ),
-            }}
-            variant="outlined"
-            sx={{ backgroundColor: "#fff" }}
-          />
-        </div>
+    <>
+      {!path.includes("account") && (
+        <nav className={styles.NavigationBar}>
+          <div className={styles.NavigationBar_Logo}>
+            <Image
+              onClick={() => r.push("/")}
+              src={"/image/LIBO-no-bg.png"}
+              alt="LIBO"
+              width={500}
+              height={500}
+            />
+          </div>
+          <ul className={styles.NavigationBar_Ul}>
+            <li>
+              <Link href={"/"}>Compra un auto</Link>
+            </li>
+            <li>
+              <Link href={"/"}>Vende tu auto</Link>
+            </li>
+          </ul>
+          <div className={styles.NavigationBar_Search}>
+            {path === "/" && (
+              <TextField
+                fullWidth
+                value={search}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
+                autoComplete="off"
+                placeholder="Buscar por marca o modelo."
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Search />
+                    </InputAdornment>
+                  ),
+                }}
+                variant="outlined"
+                sx={{ backgroundColor: "#fff" }}
+              />
+            )}
+          </div>
+          <div className={styles.NavigationBar_Login}>
+            <Button variant="contained">ingresar</Button>
+          </div>
+          <div className={styles.NavigationBar_Menu}>
+            <Menu
+              onClick={() => setToggleDrawer(true)}
+              sx={{ fontSize: "39px" }}
+            />
+          </div>
+          {path === "/" && (
+            <div className={styles.NavigationBar_Search2}>
+              <TextField
+                fullWidth
+                value={search}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e)}
+                autoComplete="off"
+                placeholder="Buscar por marca o modelo."
+                size="small"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Search />
+                    </InputAdornment>
+                  ),
+                }}
+                variant="outlined"
+                sx={{ backgroundColor: "#fff" }}
+              />
+            </div>
+          )}
+          <Drawer
+            anchor="top"
+            open={toggleDrawer}
+            onClose={() => setToggleDrawer(false)}
+          >
+            <NavigationDrawer />
+          </Drawer>
+        </nav>
       )}
-      <Drawer
-        anchor="top"
-        open={toggleDrawer}
-        onClose={() => setToggleDrawer(false)}
-      >
-        <NavigationDrawer />
-      </Drawer>
-    </nav>
+    </>
   );
 };
 
