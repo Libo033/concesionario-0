@@ -1,0 +1,70 @@
+/*#region LOGIN FORM */
+.LoginForm {
+  width: 444px;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.4px);
+  -webkit-backdrop-filter: blur(6.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 24px 15px;
+}
+
+.LoginForm_Logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.LoginForm_Logo img {
+  width: 150px;
+  height: auto;
+}
+
+.LoginForm_Logo p {
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+.LoginForm_Init {
+  font-size: x-large;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.LoginForm_Container {
+  height: 150px;
+  display: grid;
+  place-items: center;
+}
+
+.LoginForm_LinksContainer {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.link_a {
+  color: black;
+  font-size: 15px;
+}
+/*#endregion */
+
+@media (641px <= width <= 1024px) {
+}
+
+@media (width <= 640px) {
+  /*#region LOGIN FORM */
+  .LoginForm {
+    width: 90%;
+  }
+
+  .LoginForm_Logo img {
+    width: 140px;
+    height: auto;
+  }
+  /*#endregion */
+}
