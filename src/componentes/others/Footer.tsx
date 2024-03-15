@@ -28,14 +28,14 @@ const Footer = () => {
           </div>
           <div className={styles.Footer_Mid}>
             <p>Informacion</p>
-            <Link href={"/"}>Libro de quejas</Link>
-            <Link href={"/"}>Soporte</Link>
+            <Link href={"/quejas"}>Libro de quejas</Link>
+            <Link href={"/support"}>Soporte</Link>
             <a>Defensa al consumidor</a>
           </div>
           <div className={styles.Footer_Mid}>
-            <Link href={"/"}>Nuestras redes</Link>
-            <Link href={"/"}>Terminos de uso</Link>
-            <Link href={"/"}>Politica de privacidad</Link>
+            <Link href={"/social"}>Nuestras redes</Link>
+            <Link href={"/terms-of-use"}>Terminos de uso</Link>
+            <Link href={"/privacy-policy"}>Politica de privacidad</Link>
             <a
               href="https://autogestion.produccion.gob.ar/consumidores"
               rel="noreferrer nofollow"
