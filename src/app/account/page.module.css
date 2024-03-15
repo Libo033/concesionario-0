@@ -1,3 +1,4 @@
+/*#region */
 .page {
   width: 100%;
   height: 100vh;
@@ -10,3 +11,66 @@
   justify-content: center;
   align-items: center;
 }
+/*#endregion */
+
+/*#region RECOVER */
+.Recover {
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Recover_ImgContainer {
+  display: flex;
+  background-color: rgb(156, 39, 176);
+  border-radius: 30px;
+  padding: 9px;
+}
+
+.Recover_Img {
+  width: 27px;
+  height: auto;
+}
+
+.Recover_Title {
+  font-weight: 500;
+  font-size: x-large;
+}
+
+.Recover_SubTitle {
+  padding-inline: 12px;
+  margin-top: 9px;
+  font-weight: 300;
+  color: gray;
+  text-align: center;
+}
+
+.Recover_Form {
+  max-width: 444px;
+  width: 30%;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.Recover_SignInContainer a {
+  color: rgba(25, 118, 210);
+  text-decoration-color: rgba(25, 118, 210, 0.4);
+}
+
+.Recover_SignInContainer a:hover {
+  text-decoration-color: rgba(25, 118, 210);
+}
+
+.Recover_Sent {
+  margin-top: 21px;
+  margin-bottom: 36px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+/*#endregion */
