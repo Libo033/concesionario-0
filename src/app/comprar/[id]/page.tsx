@@ -43,7 +43,7 @@ const ComprarID = ({ params }: { params: { id: string } }) => {
             />
           </div>
           <div className={styles.ComprarID_Bottom}>
-            <BasicInfo />
+            <BasicInfo info={car.informacion} />
           </div>
         </>
       )}

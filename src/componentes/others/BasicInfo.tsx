@@ -8,6 +8,7 @@ import MuiAccordionSummary, {
   AccordionSummaryProps,
 } from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
+import { IBasicInfo } from "@/libs/interfaces";
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -45,35 +46,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   paddingTop: "6px",
 }));
 
-const caracteristicas = [
-  {
-    titulo: "General",
-    data: [
-      "Nafta",
-      "Levantavidrios electrico",
-      "Motor 2.2L",
-      "Caja manual 6 velocidades",
-      "24000km",
-      "Service hecho reciente",
-      "4 cubiertas nuevas",
-    ],
-  },
-  { titulo: "Exterior", data: [] },
-  { titulo: "Seguridad", data: ["Frenos ABS", "Airbag"] },
-  {
-    titulo: "Modificaciones",
-    data: [
-      "Tratamiento de pintura",
-      "Amortiguadores racing HKI",
-      "Volante Momo",
-    ],
-  },
-  { titulo: "Equipamiento y confort", data: [] },
-  { titulo: "Entretenimiento", data: [] },
-  { titulo: "Otros", data: ["2 llaves originales", "Volante original"] },
-];
-
-const BasicInfo = () => {
+const BasicInfo: React.FC<IBasicInfo> = ({ info }) => {
   const [expanded, setExpanded] = useState<string | false>("");
 
   const handleChange =
@@ -85,35 +58,62 @@ const BasicInfo = () => {
     <div className={styles.BasicInfo}>
       <p className={styles.BasicInfo_Title}>Caracteristicas</p>
       <div className={styles.BasicInfo_Accordion}>
-        {caracteristicas.map((c) => (
-          <Fragment key={c.titulo}>
-            {c.data.length > 0 && (
-              <Accordion
-                expanded={expanded === c.titulo}
-                onChange={handleChange(c.titulo)}
-              >
-                <AccordionSummary
-                  aria-controls="panel1d-content"
-                  id="panel1d-header"
-                >
-                  <p className={styles.BasicInfo_AccordionTitle}>{c.titulo}</p>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <div className={styles.BasicInfo_Datos}>
-                    {c.data.map((d) => (
-                      <p key={d} className={styles.BasicInfo_Dato}>
-                        · {d}
-                      </p>
-                    ))}
-                  </div>
-                </AccordionDetails>
-              </Accordion>
-            )}
-          </Fragment>
-        ))}
+        {info.general.data.length > 0 && (
+          <Accordion
+            expanded={expanded === info.general.titulo}
+            onChange={handleChange(info.general.titulo)}
+          >
+            <AccordionSummary
+              aria-controls="panel1d-content"
+              id="panel1d-header"
+            >
+              <p className={styles.BasicInfo_AccordionTitle}>
+                {info.general.titulo}
+              </p>
+            </AccordionSummary>
+            <AccordionDetails>
+              <div className={styles.BasicInfo_Datos}>
+                {info.general.data.map((d) => (
+                  <p key={d} className={styles.BasicInfo_Dato}>
+                    · {d}
+                  </p>
+                ))}
+              </div>
+            </AccordionDetails>
+          </Accordion>
+        )}
       </div>
     </div>
   );
 };
 
 export default BasicInfo;
+
+/*
+  {info.map((c) => (
+    <Fragment key={c.titulo}>
+      {c.data.length > 0 && (
+        <Accordion
+          expanded={expanded === c.titulo}
+          onChange={handleChange(c.titulo)}
+        >
+          <AccordionSummary
+            aria-controls="panel1d-content"
+            id="panel1d-header"
+          >
+            <p className={styles.BasicInfo_AccordionTitle}>{c.titulo}</p>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className={styles.BasicInfo_Datos}>
+              {c.data.map((d) => (
+                <p key={d} className={styles.BasicInfo_Dato}>
+                  · {d}
+                </p>
+              ))}
+            </div>
+          </AccordionDetails>
+        </Accordion>
+      )}
+    </Fragment>
+  ))}
+*/

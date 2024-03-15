@@ -44,3 +44,39 @@ export interface ICar {
     };
   };
 }
+
+export interface IBasicInfo {
+  info: {
+    combustible: string;
+    motor: string;
+    transmision: string;
+    general: {
+      titulo: string;
+      data: string[];
+    };
+    exterior: {
+      titulo: string;
+      data: string[];
+    };
+    seguridad: {
+      titulo: string;
+      data: string[];
+    };
+    modificaciones: {
+      titulo: string;
+      data: string[];
+    };
+    equip_confort: {
+      titulo: string;
+      data: string[];
+    };
+    entretenimiento: {
+      titulo: string;
+      data: string[];
+    };
+    otros: {
+      titulo: string;
+      data: string[];
+    };
+  };
+}
