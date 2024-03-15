@@ -81,6 +81,31 @@
   margin-bottom: 12px;
 }
 
+.BasicInfo_Principal {
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.BasicInfo_Container {
+  margin: 0;
+  border: 1px solid #1976d290;
+  border-radius: 6px;
+  width: 20%;
+  padding-block: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 1px 3px 12px gainsboro;
+}
+
+.BasicInfo_Container img {
+  width: 39px;
+  height: auto;
+}
+
 .BasicInfo_AccordionTitle {
   font-size: large;
   font-weight: 600;
