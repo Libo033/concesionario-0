@@ -33,6 +33,12 @@ const CarCard: React.FC<ICar> = (props) => {
         </p>
         <p className={styles.CarCard_InfoKm}>{props.km}km</p>
         <p className={styles.CarCard_InfoUbi}>
+          <Image
+            src={"/image/pointer.svg"}
+            alt="pointer"
+            width={12}
+            height={12}
+          />{" "}
           {props.localidad}, {props.provincia}
         </p>
       </div>
