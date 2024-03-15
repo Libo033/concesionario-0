@@ -99,6 +99,8 @@
   padding-block: 18px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 6px;
   box-shadow: 1px 3px 12px gainsboro;
 }
@@ -238,7 +240,6 @@
     width: 60%;
     text-wrap: pretty;
     text-align: center;
-    justify-content: space-evenly;
   }
 
   .BasicInfo_Dato {
