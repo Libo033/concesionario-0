@@ -161,6 +161,7 @@
 @media (width <= 640px) {
   /*#region NavigationBar */
   .NavigationBar {
+    z-index: 999;
     height: fit-content;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -206,6 +207,7 @@
 
   /*#region NavigationDrawer */
   .NavigationDrawer {
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     padding-inline: 15px;
