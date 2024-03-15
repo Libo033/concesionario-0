@@ -48,8 +48,47 @@
 }
 
 .link_a {
-  color: black;
+  color: #303030;
   font-size: 15px;
+}
+
+.link_a:hover {
+  color: #000;
+}
+
+.LoginButtonGroup {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.LoginButtonGroup button {
+  transition: 60ms ease-in-out 0s;
+  padding-block: 9px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #606060;
+  background-color: white;
+  border: 1px solid #bcbcbc;
+  border-radius: 12px;
+}
+
+.LoginButtonGroup button:hover {
+  transition: 60ms ease-in-out 0s;
+  transform: translateY(-1px);
+  box-shadow: 1px 3px 6px #30303045;
+}
+
+.LoginButtonGroup_Logo {
+  width: 27px;
+  height: auto;
 }
 /*#endregion */
 
@@ -63,7 +102,7 @@
   }
 
   .LoginForm_Logo img {
-    width: 140px;
+    width: 120px;
     height: auto;
   }
   /*#endregion */

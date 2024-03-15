@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import { Button, TextField } from "@mui/material";
+import { Button, Divider, TextField } from "@mui/material";
 import Link from "next/link";
 
 const LoginForm = () => {
@@ -38,6 +38,29 @@ const LoginForm = () => {
         <Link className={styles.link_a} href={"/account/register"}>
           Registrarse!
         </Link>
+      </div>
+      <Divider sx={{ paddingBlock: "10px" }} />
+      <div className={styles.LoginButtonGroup}>
+        <button>
+          <Image
+            className={styles.LoginButtonGroup_Logo}
+            src={"/image/google.svg"}
+            alt="google"
+            width={45}
+            height={45}
+          />
+          GOOGLE
+        </button>
+        <button>
+          <Image
+            className={styles.LoginButtonGroup_Logo}
+            src={"/image/facebook.svg"}
+            alt="facebook"
+            width={45}
+            height={45}
+          />
+          FACEBOOK
+        </button>
       </div>
     </form>
   );

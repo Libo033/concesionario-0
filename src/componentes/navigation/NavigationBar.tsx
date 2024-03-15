@@ -57,7 +57,12 @@ const NavigationBar = () => {
             )}
           </div>
           <div className={styles.NavigationBar_Login}>
-            <Button variant="contained">ingresar</Button>
+            <Button
+              onClick={() => r.push("/account/login")}
+              variant="contained"
+            >
+              ingresar
+            </Button>
           </div>
           <div className={styles.NavigationBar_Menu}>
             <Menu
