@@ -33,7 +33,32 @@ const Footer = () => {
             <a>Defensa al consumidor</a>
           </div>
           <div className={styles.Footer_Mid}>
-            <Link href={"/social"}>Nuestras redes</Link>
+            <div className={styles.Footer_Social}>
+              <a
+                rel="noreferrer nofollow"
+                target="_blank"
+                href="https://facebook.com/"
+              >
+                <Image
+                  src={"/image/facebook.svg"}
+                  alt="facebook"
+                  width={24}
+                  height={24}
+                />
+              </a>
+              <a
+                rel="noreferrer nofollow"
+                target="_blank"
+                href="https://instagram.com/"
+              >
+                <Image
+                  src={"/image/ig.svg"}
+                  alt="instagram"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </div>
             <Link href={"/terms-of-use"}>Terminos de uso</Link>
             <Link href={"/privacy-policy"}>Politica de privacidad</Link>
             <a

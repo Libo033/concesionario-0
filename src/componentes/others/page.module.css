@@ -65,6 +65,16 @@
 .Footer_Mid a:hover {
   text-decoration: underline;
 }
+
+.Footer_Social {
+  display: flex;
+  gap: 18px;
+}
+
+.Footer_Social a {
+  display: flex;
+  align-items: center;
+}
 /*#endregion */
 
 /*#region BASIC INFO */
