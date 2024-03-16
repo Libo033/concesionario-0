@@ -10,6 +10,21 @@ body {
   margin-right: auto;
 }
 
+.default-page {
+  height: fit-content;
+  min-height: 73vh;
+  padding-top: 15vh;
+  padding-inline: 10%;
+}
+
+.default-title {
+  padding-top: 24px;
+  font-weight: 600;
+  font-size: xx-large;
+  text-align: center;
+  text-decoration: underline;
+}
+
 .MuiTooltip-tooltip {
   background-color: white;
   border: 1px solid gainsboro;
@@ -18,4 +33,10 @@ body {
 
 .css-yem0l2-MuiPopper-root-MuiTooltip-popper {
   z-index: 800;
+}
+
+@media (width <= 640px) {
+  .default-page {
+    padding-top: 146px;
+  }
 }
