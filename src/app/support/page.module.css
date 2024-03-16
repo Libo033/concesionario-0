@@ -1,0 +1,27 @@
+.Support {
+  padding-top: 15vh;
+  padding-inline: 12%;
+  min-height: 73vh;
+  height: fit-content;
+}
+
+.Support_Title {
+  padding-top: 24px;
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.Support_Container {
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.Support_Form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
