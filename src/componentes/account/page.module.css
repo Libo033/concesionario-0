@@ -108,6 +108,15 @@
 .RegisterForm_Simple {
   padding-block: 10px;
 }
+
+.link_r {
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  color: rgba(25, 118, 210);
+  text-decoration-color: rgba(25, 118, 210, 0.4);
+  margin-bottom: 64px;
+}
 /*#endregion */
 
 @media (641px <= width <= 1024px) {

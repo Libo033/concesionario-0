@@ -40,6 +40,9 @@ const RegisterForm = () => {
       <Button fullWidth sx={{ marginTop: "15px" }} variant="contained">
         Registrarse
       </Button>
+      <Link href={"/account/login"} className={styles.link_r}>
+        Iniciar Sesion!
+      </Link>
     </form>
   );
 };
