@@ -33,7 +33,7 @@ const NavigationBar = () => {
               <Link href={"/"}>Compra un auto</Link>
             </li>
             <li>
-              <Link href={"/"}>Vende tu auto</Link>
+              <Link href={"/vender"}>Vende tu auto</Link>
             </li>
           </ul>
           <div className={styles.NavigationBar_Search}>

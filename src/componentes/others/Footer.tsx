@@ -23,7 +23,7 @@ const Footer = () => {
           <div className={styles.Footer_Mid}>
             <p>Como funciona</p>
             <Link href={"/"}>Comprar un auto</Link>
-            <Link href={"/"}>Vender un auto</Link>
+            <Link href={"/vender"}>Vender un auto</Link>
             <Link href={"/"}>Preguntas frecuentes</Link>
           </div>
           <div className={styles.Footer_Mid}>
