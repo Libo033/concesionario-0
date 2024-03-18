@@ -1,0 +1,40 @@
+.Vender {
+  padding-top: 15vh;
+  min-height: 73vh;
+  height: fit-content;
+}
+
+.Vender_Info {
+  height: 60vh;
+  padding-inline: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 32px;
+}
+
+.Vender_Title {
+  font-size: larger;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+@media (641px <= width <= 1024px) {
+}
+
+@media (width <= 640px) {
+  .Vender {
+    padding-top: 88px;
+    min-height: 45vh;
+    height: fit-content;
+  }
+
+  .Vender_Info {
+    height: 45vh;
+    padding-inline: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 32px;
+  }
+}
