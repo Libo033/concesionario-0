@@ -9,17 +9,11 @@ const RecoverPassword = () => {
   const [emailSent, setEmailSent] = useState<boolean>(false);
 
   return (
-    <div className={styles.Recover}>
-      <div className={styles.Recover_ImgContainer}>
-        <Image
-          className={styles.Recover_Img}
-          src={"/image/login.svg"}
-          alt="login"
-          width={90}
-          height={90}
-        />
+    <div className={styles.Main}>
+      <div className={styles.Main_ImgContainer}>
+        <Image src={"/image/login.svg"} alt="login" width={90} height={90} />
       </div>
-      <h1 className={styles.Recover_Title}>Olvidaste tu constraseña?</h1>
+      <p className={styles.Main_Title}>Olvidaste tu constraseña?</p>
       <span className={styles.Recover_SubTitle}>
         No te preocupes, te mandaremos las instrucciones para que cambies tu
         costraseña.

@@ -14,7 +14,7 @@ const LoginForm = () => {
           width={450}
           height={450}
         />
-        <p>Libo Automotores</p>
+        <h1>Libo Automotores</h1>
       </div>
       <div className={styles.LoginForm_Init}>
         <p>Iniciar Sesion</p>
