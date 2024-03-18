@@ -74,6 +74,10 @@
 
 @media (641px <= width <= 1024px) {
   /*#region NavigationBar */
+  .NavigationBar {
+    z-index: 999;
+  }
+
   .NavigationBar_Logo {
     width: 24%;
   }
