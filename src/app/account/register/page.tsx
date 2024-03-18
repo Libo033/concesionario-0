@@ -9,7 +9,7 @@ const Register = () => {
       <div className={styles.Main_ImgContainer}>
         <Image src={"/image/login.svg"} alt="login" width={90} height={90} />
       </div>
-      <p className={styles.Main_Title}>Olvidaste tu constraseña?</p>
+      <p className={styles.Main_Title}>Registrarse</p>
       <RegisterForm />
     </div>
   );

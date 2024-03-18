@@ -92,18 +92,59 @@
 }
 /*#endregion */
 
+/*#region REGISTER FORM */
+.RegisterForm {
+  padding-top: 32px;
+  width: 600px;
+  height: fit-content;
+}
+
+.RegisterForm_Double {
+  padding-block: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.RegisterForm_Simple {
+  padding-block: 10px;
+}
+/*#endregion */
+
 @media (641px <= width <= 1024px) {
+  /*#region REGISTER FORM */
+  .RegisterForm {
+    padding-top: 24px;
+    width: 501px;
+  }
+  /*#endregion */
 }
 
 @media (width <= 640px) {
   /*#region LOGIN FORM */
   .LoginForm {
-    width: 90%;
+    width: 87%;
   }
 
   .LoginForm_Logo img {
     width: 120px;
     height: auto;
+  }
+  /*#endregion */
+
+  /*#region REGISTER FORM */
+  .RegisterForm {
+    padding-top: 24px;
+    width: 87%;
+  }
+
+  .RegisterForm_Double {
+    padding-block: 15px;
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  .RegisterForm_Simple {
+    padding-block: 15px;
   }
   /*#endregion */
 }
