@@ -64,10 +64,7 @@ const NavigationBar = () => {
           </div>
           <div className={styles.NavigationBar_Login}>
             {true ? (
-              <Button
-                onClick={() => r.push("/account/dashboard")}
-                variant="outlined"
-              >
+              <Button onClick={() => r.push("/dashboard")} variant="outlined">
                 <ManageAccounts />
               </Button>
             ) : (

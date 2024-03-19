@@ -12,13 +12,23 @@ const NavigationDrawer = () => {
   return (
     <div className={styles.NavigationDrawer}>
       <div className={styles.NavigationDrawer_Button}>
-        <Button
-          onClick={() => r.push("/account/login")}
-          fullWidth
-          variant="contained"
-        >
-          ingresar
-        </Button>
+        {true ? (
+          <Button
+            fullWidth
+            onClick={() => r.push("/dashboard")}
+            variant="outlined"
+          >
+            mi perfil
+          </Button>
+        ) : (
+          <Button
+            fullWidth
+            onClick={() => r.push("/account/login")}
+            variant="contained"
+          >
+            ingresar
+          </Button>
+        )}
       </div>
       <ul className={styles.NavigationDrawer_Ul}>
         <li>
