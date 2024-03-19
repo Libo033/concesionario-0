@@ -2,8 +2,14 @@
 import React, { ChangeEvent, useContext, useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
-import { Button, Drawer, InputAdornment, TextField } from "@mui/material";
-import { Menu, Search } from "@mui/icons-material";
+import {
+  Button,
+  Drawer,
+  InputAdornment,
+  TextField,
+  Tooltip,
+} from "@mui/material";
+import { ManageAccounts, Menu, Search } from "@mui/icons-material";
 import Image from "next/image";
 import NavigationDrawer from "./NavigationDrawer";
 import { usePathname, useRouter } from "next/navigation";
@@ -57,12 +63,21 @@ const NavigationBar = () => {
             )}
           </div>
           <div className={styles.NavigationBar_Login}>
-            <Button
-              onClick={() => r.push("/account/login")}
-              variant="contained"
-            >
-              ingresar
-            </Button>
+            {true ? (
+              <Button
+                onClick={() => r.push("/account/dashboard")}
+                variant="outlined"
+              >
+                <ManageAccounts />
+              </Button>
+            ) : (
+              <Button
+                onClick={() => r.push("/account/login")}
+                variant="contained"
+              >
+                ingresar
+              </Button>
+            )}
           </div>
           <div className={styles.NavigationBar_Menu}>
             <Menu
