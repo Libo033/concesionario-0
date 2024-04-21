@@ -24,7 +24,7 @@ const NavigationBar = () => {
   return (
     <>
       {!path.includes("account") && (
-        <nav className={styles.NavigationBar}>
+        <nav style={{maxWidth: "1560px"}} className={styles.NavigationBar}>
           <div className={styles.NavigationBar_Logo}>
             <Image
               onClick={() => r.push("/")}
