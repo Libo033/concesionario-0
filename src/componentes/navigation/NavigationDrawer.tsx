@@ -13,13 +13,24 @@ const NavigationDrawer = () => {
     <div className={styles.NavigationDrawer}>
       <div className={styles.NavigationDrawer_Button}>
         {true ? (
-          <Button
-            fullWidth
-            onClick={() => r.push("/dashboard")}
-            variant="outlined"
-          >
-            mi perfil
-          </Button>
+          <>
+            <Button
+              fullWidth
+              onClick={() => r.push("/dashboard")}
+              variant="outlined"
+            >
+              mi perfil
+            </Button>
+            <Button
+            sx={{marginTop: "12px"}}
+              fullWidth
+              onClick={() => r.push("/dashboard")}
+              variant="outlined"
+              color="error"
+            >
+              cerrar sesion
+            </Button>
+          </>
         ) : (
           <Button
             fullWidth
