@@ -7,6 +7,8 @@ import BottomDataCard from "@/componentes/cards/BottomDataCard";
 import BasicInfo from "@/componentes/others/BasicInfo";
 import { CarContext } from "@/context/CarContext";
 import { ICar } from "@/libs/interfaces";
+import MoreCars from "@/componentes/cards/MoreCars";
+import { Divider } from "@mui/material";
 
 const ComprarID = ({ params }: { params: { id: string } }) => {
   const { cars, loadCars } = useContext(CarContext);
@@ -47,6 +49,8 @@ const ComprarID = ({ params }: { params: { id: string } }) => {
           </div>
         </>
       )}
+      <Divider sx={{marginBlock: "30px", marginInline:"24px"}} />
+      <MoreCars />
     </div>
   );
 };

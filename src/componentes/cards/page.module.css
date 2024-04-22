@@ -133,6 +133,19 @@
 }
 /*#endregion */
 
+/*#region MORE CARS */
+.MoreCars {
+  width: 100%;
+  padding-inline: 24px;
+}
+
+.MoreCars_P {
+  font-size: x-large;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+/*#endregion */
+
 @media (width <= 1200px) {
   /*#region SIDE DATA CARD */
   .SideDataCard_Top {
