@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import {
   Button,
+  ClickAwayListener,
   Drawer,
   InputAdornment,
   TextField,
@@ -14,12 +15,14 @@ import Image from "next/image";
 import NavigationDrawer from "./NavigationDrawer";
 import { usePathname, useRouter } from "next/navigation";
 import { CarContext } from "@/context/CarContext";
+import NavigationDropdown from "./NavigationDropdown";
 
 const NavigationBar = () => {
   const { search, handleChange } = useContext(CarContext);
   const r = useRouter();
   const path = usePathname();
-  const [toggleDrawer, setToggleDrawer] = useState(false);
+  const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
+  const [profile, setProfile] = useState<boolean>(false);
 
   return (
     <>
@@ -64,18 +67,20 @@ const NavigationBar = () => {
           </div>
           <div className={styles.NavigationBar_Login}>
             {true ? (
-              <Tooltip
-                id="dropdownAccount"
-                disableFocusListener
-                disableHoverListener
-                disableTouchListener
-                title={"HOla"}
-                open={true}
-              >
-                <Button variant="outlined">
-                  <ManageAccounts />
-                </Button>
-              </Tooltip>
+              <ClickAwayListener onClickAway={() => setProfile(false)}>
+                <Tooltip
+                  id="dropdownAccount"
+                  disableFocusListener
+                  disableHoverListener
+                  disableTouchListener
+                  title={<NavigationDropdown />}
+                  open={profile}
+                >
+                  <Button onClick={() => setProfile(true)} variant="outlined">
+                    <ManageAccounts />
+                  </Button>
+                </Tooltip>
+              </ClickAwayListener>
             ) : (
               <Button
                 onClick={() => r.push("/account/login")}
