@@ -24,19 +24,21 @@ const MoreCars = () => {
   return (
     <section className={styles.MoreCars}>
       <p className={styles.MoreCars_P}>Mas autos</p>
-      <Swiper
-        modules={[Autoplay]}
-        slidesPerView={q}
-        spaceBetween={30}
-        autoplay={{ disableOnInteraction: false }}
-        loop={true}
-      >
-        {cars.map((c) => (
-          <SwiperSlide key={c._id}>
-            <CarCard {...c} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      {loadCars && (
+        <Swiper
+          modules={[Autoplay]}
+          slidesPerView={q}
+          spaceBetween={30}
+          autoplay={{ disableOnInteraction: false }}
+          loop={true}
+        >
+          {cars.map((c) => (
+            <SwiperSlide key={c._id}>
+              <CarCard {...c} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      )}
     </section>
   );
 };
