@@ -24,7 +24,7 @@ const NavigationBar = () => {
   return (
     <>
       {!path.includes("account") && (
-        <nav style={{maxWidth: "1560px"}} className={styles.NavigationBar}>
+        <nav style={{ maxWidth: "1560px" }} className={styles.NavigationBar}>
           <div className={styles.NavigationBar_Logo}>
             <Image
               onClick={() => r.push("/")}
@@ -64,9 +64,18 @@ const NavigationBar = () => {
           </div>
           <div className={styles.NavigationBar_Login}>
             {true ? (
-              <Button onClick={() => r.push("/dashboard")} variant="outlined">
-                <ManageAccounts />
-              </Button>
+              <Tooltip
+                id="dropdownAccount"
+                disableFocusListener
+                disableHoverListener
+                disableTouchListener
+                title={"HOla"}
+                open={true}
+              >
+                <Button variant="outlined">
+                  <ManageAccounts />
+                </Button>
+              </Tooltip>
             ) : (
               <Button
                 onClick={() => r.push("/account/login")}

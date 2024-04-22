@@ -1,4 +1,5 @@
-import React, { SetStateAction } from "react";
+"use client";
+import React, { SetStateAction, useEffect } from "react";
 import styles from "./page.module.css";
 import { ClickAwayListener, Tooltip } from "@mui/material";
 import { KeyboardArrowDown } from "@mui/icons-material";
@@ -32,11 +33,23 @@ const OrderCars: React.FC<IOrderCars> = ({
   setToolTip,
   value,
 }) => {
+  useEffect(() => {
+    if (open) {
+      window.addEventListener("scroll", handleScroll);
+    }
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  const handleScroll = () => {
+    setToolTip(false);
+  };
+
   return (
     <div className={styles.Order}>
       <ClickAwayListener onClickAway={() => setToolTip(false)}>
         <div>
           <Tooltip
+            id="dropdownOrderCars"
             disableFocusListener
             disableHoverListener
             disableTouchListener

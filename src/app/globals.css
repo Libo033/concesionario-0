@@ -31,8 +31,8 @@ body {
   padding: 8px 12px;
 }
 
-.css-yem0l2-MuiPopper-root-MuiTooltip-popper {
-  z-index: 800;
+.dropdownAccount {
+  z-index: 1600;
 }
 
 @media (width <= 640px) {
