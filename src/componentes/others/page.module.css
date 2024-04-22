@@ -105,7 +105,7 @@
   margin: 0;
   border: 1px solid #1976d290;
   border-radius: 6px;
-  width: 20%;
+  width: 27%;
   padding-block: 18px;
   display: flex;
   flex-direction: column;
@@ -246,10 +246,10 @@
 
   /*#region BASIC INFO */
   .BasicInfo_Container {
-    margin: auto;
-    width: 60%;
+    width: 100%;
     text-wrap: pretty;
     text-align: center;
+    display: flex;
   }
 
   .BasicInfo_Dato {
