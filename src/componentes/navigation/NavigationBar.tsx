@@ -1,5 +1,5 @@
 "use client";
-import React, { ChangeEvent, useContext, useState } from "react";
+import React, { ChangeEvent, useContext, useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import {
@@ -23,6 +23,17 @@ const NavigationBar = () => {
   const path = usePathname();
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
   const [profile, setProfile] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (profile) {
+      window.addEventListener("scroll", handleScroll);
+    }
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  const handleScroll = () => {
+    setProfile(false);
+  };
 
   return (
     <>
